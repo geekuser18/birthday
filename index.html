@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Greeting</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <br/>
+  <div class="container">
+    <header>
+      <div id="desc" style="font-size:40px;">Wishing you a fantastic day filled with joy and happiness.</div>
+      <div id="info" style="color:red;font-weight:bolder;font-size:40px;">TRY PRESSING ON THE CAKE STEPS.</div>
+      <br/><br/><br/><br/>
+    </header>
+    <div class="cake-container">
+      <div class="flame"></div>
+      <div class="candle"></div>
+      <div class="cake1" style="font-size:40px;">HAPPY</div>
+      <div class="cake2" style="font-size:40px;">BIRTHDAY</div>
+      <div class="cake3" style="font-size:40px;">TO YOU</div>
+      <br/><br/>
+      <button class="button" onclick="openWin()">Click me!</button>
+    </div>
+  </div>
+ 
+  
+  
+  <script>
+  let myWindow;
+  
+  function openWin() {
+    document.getElementById("info").innerHTML ="Now blow the candle by pressing on it.";
+    setTimeout(function() {
+    document.getElementById("desc").innerHTML ="";
+    const audio = new Audio("song.mp3");
+    audio.play();
+    }, 2000);
+    var delayInMilliseconds = 22000;
+    setTimeout(function() {
+    document.getElementById("info").innerHTML ="HAPPY BIRTHDAY TO YOU!";
+    document.getElementById("desc").innerHTML ="Wishing you a fantastic day filled with joy and happiness.";
+  }, 17000);
+    setTimeout(function() {
+    myWindow = window.open("main.html", "", "width=200,height=100");
+    window.close();
+    }, delayInMilliseconds);
+}
+  </script>
+</body>
+</html>
